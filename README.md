@@ -2,13 +2,13 @@
 
 ## Learning Goals
 
-* Define a Unix path
-* Identify typical Unix "Home Directory" paths
-* Identify my logged-in username with `whoami`
-* Identify the current working directory" with `pwd` ("print working directory")
-* Navigate up one directory in the file system
-* Navigate back to a home directory
-* Demonstrate how to navigate the CLI with Bash
+- Define a Unix path
+- Identify typical Unix "Home Directory" paths
+- Identify my logged-in username with `whoami`
+- Identify the current working directory" with `pwd` ("print working directory")
+- Navigate up one directory in the file system
+- Navigate back to a home directory
+- Demonstrate how to navigate the CLI with Bash
 
 ## Introduction
 
@@ -17,8 +17,12 @@ time users who are afraid of making mistakes that could break their computers or
 ruin their files. Fear not! We'll step you through it.
 
 The command-line interfaces, or "shells", used on OSX, Linux, and the "Windows
-Subsystem for Linux (WSL)," are called `bash`. We'll document how to use the
-`bash` CLI in this module.
+Subsystem for Linux (WSL)," are called `bash`. In this lesson, we're going to
+explore the command-line interface in a bit more detail. To help us, we're
+going to us the simulated command-line interface in Learn's In Browser IDE.
+
+To follow along, click 'Sandbox' and use the simulated CLI. The exact details
+and examples may differ.
 
 ## Demonstrate How to Navigate with `bash`
 
@@ -27,19 +31,18 @@ interface_ for controlling your computer (or operating system).
 
 > **ASIDE**: Bash is actually an acronym which stands for **B**ourne-**A**gain
 > **SH**ell. As the word "again" suggests, there are _other_ shells, some of
-> which came before `bash`. There are also shells that have come along _since_
-> `bash`. Nevertheless most programmers use `bash` or something very similar.
+> which came before `bash`. There are also shells that have come along _since_ > `bash`. Nevertheless, most programmers use `bash` or something very similar.
 
 A great place to start learning about the CLI is by using it to do a task
 you're already familiar with: looking to see what's inside folders like
 your directories and desktop. Programmers call this activity: _navigating_.
-In the CLI we imagine that we're "traveling" to different places. We'll use
+In the CLI, we imagine that we're "traveling" to different places. We'll use
 metaphors like "go into the folder" or "go up one folder" or "visit the location
 at such-and-such _path_."
 
 As you learn to navigate with the shell and get to used to it, you'll see that
 it's friendlier than it might seem at first. In no time, you'll be looking like
-this typing-machine from "Ghost in the Shell:"
+this typing-machine from [Ghost in the Shell][gits]:
 
 !["Ghost in the Shell"](https://i.giphy.com/fsoCk5kgOcYMM.gif)
 
@@ -81,7 +84,7 @@ This means the "root" contains a directory called `Users` and `Users` contains
 This means the "root" contains a directory called `home` and `home` contains
 `username`. Paths like this are typical for Linux.
 
-Obviously, our names (well, most of our names) are not `username`. Instead we
+Obviously, our names (well, most of our names) are not `username`. Instead, we
 log into our systems as `Byron Poodle` or `Nancy the Cat`. How can we find out
 what our logged-in-user name is?
 
@@ -107,27 +110,30 @@ My system says I am `kellyegreene`. Based on what we learned about home
 directories, what do you think my home directory _path_ is? In the next section,
 we'll ask the shell to tell us what our home directory's path is.
 
+If you are using the Learn In Browser IDE, your user account will be
+the github account name tied to Learn.
+
 ### Identify the Current Working Directory" With `pwd` ("print working directory")
 
 ```bash
 $ pwd
 ```
 
-**Note:** *Any time you see the* `$` *character, you shouldn't type it in. This
-is just a standard way to represent a bash prompt. Yours may or may not be a*
+**Note:** _Any time you see the_ `$` _character, you shouldn't type it in. This
+is just a standard way to represent a bash prompt. Yours may or may not be a_
 `$`.
 
 You should see some output describing the directory you are currently in. It's
 probably something like `/Users/byron_the_poodle`.
 
-The `pwd` command stands for "**p**rint **w**orking **d**irectory". As you
-"navigate" your file system, you might get lost. Just like wandering in a big
-city, you can look for street signs to find out where you are. The `pwd` command
-acts like those street signs. You'll never be lost again!
+The `pwd` command stands for "**p**rint **w**orking **d**irectory". As you "navigate" your
+file system, you might get lost. Just like wandering in a big city, you can look
+for street signs to find out where you are. The `pwd` command acts like those
+street signs. You'll never be lost again!
 
 We've just used `pwd` to demonstrate that when we open a `bash` session the
 operating system automatically "puts" us in our home directory. Let's now do
-some real "navigation." In the next section we'll learn to move "up" one
+some real "navigation." In the next section, we'll learn to move "up" one
 containing directory.
 
 ### Navigate Up One Directory in the File System
@@ -140,8 +146,8 @@ $ pwd
 ```
 
 You "moved up" one level of nesting, so you should now see that you are one
-level up from where you were and one level closer to the "root" directory.
-In your terminal see this by using `pwd`:
+level up from where you were and one level closer to the "root" directory. In
+your terminal see this by using `pwd`:
 
 `/Users`
 
@@ -149,19 +155,19 @@ The `cd` command stands for "**c**hange **d**irectory".
 
 The `..` is a shortcut for the directory _above_ the working directory. The
 `bash` shell provides a series of "shortcuts" for some commonly-used file system
-paths. `..` means "this directory's containing folder. These shortcuts look
+paths. `..` means "this directory's containing folder." These shortcuts look
 strange but they're designed to be _short_ and therefore _easy to type_ and
 therefore _fast_ and, as we've hinted, the CLI is all about speed.
 
-So in this command example we said: `change directory to the parent folder`. You
-can do this all the way back up to the `/` directory.
+So in this command example, we said: `change directory to the parent folder`.
+You can do this all the way back up to the `/` directory.
 
 Let's use `cd` to get back to our home directory.
 
 ### Change Directories Using `cd`
 
-The `bash` shell provides default shortcut for your home directory: `~`. Use `cd
-..` to go "up" a few directories (why not all the way to the root?).
+The `bash` shell provides the default shortcut for your home directory: `~`. Use
+`cd ..` to go "up" a few directories (why not all the way to the root?).
 
 Then, when you run this command:
 
@@ -176,7 +182,7 @@ You'll see you're back in your home directory. Use `pwd` to verify!
 > be taken to your home directory.
 
 Another shortcut, that might seem not too useful at first, is `.` meaning "the
-current directory I'm in.
+current directory I'm in."
 
 If you try this command:
 
@@ -198,9 +204,9 @@ about the types of paths you can give `bash` in the next section.
 
 ### Paths in Shell
 
-The path supplied to the `cd` command can be either *absolute* or *relative*
+The path supplied to the `cd` command can be either _absolute_ or _relative_
 paths. An absolute path is a path that always gets you to the same folder. You
-can recognize them because they start with `/`. For example
+can recognize them because they start with `/`. For example,
 `/Users/kellyegreene`, is an absolute path.
 
 A relative path is a path **relative** to the working directory you're "in" at
@@ -208,13 +214,17 @@ the time you write the command. They start
 with the name of a directory or a file. For example `kellyegreene/Documents`, is
 a relative path.
 
-If I were in my home directory `/Users/kellyegreene` and said `cd
-mixtapes/the-masked-rapper-vol-1`, it would work! If I were in
-`/Users/annoyingbrother` and said `cd mixtapes/the-masked-rapper-vol-1`, `bash`
-would return an error because that sub-directory doesn't exist there (because
-I, Kellye Greene, am the Masked Rapper, while my brother can't rhyme).
+If I were in my home directory `/Users/kellyegreene` and I had a directory
+`mixtapes` containing a subdirectory, `the-masked-rapper-vol-1`, I could type
+`cd mixtapes/the-masked-rapper-vol-1`, and it would and the shell would navigate
+into the `the-masked-rapper-vol-1` folder.
 
-Absolute paths and relative paths might sound confusing in CLI universe, but
+If I were in `/Users/annoyingbrother` and said
+`cd mixtapes/the-masked-rapper-vol-1`, `bash` would return an error because that
+sub-directory doesn't exist there (because I, Kellye Greene, am the Masked
+Rapper, while my brother can't rhyme).
+
+Absolute paths and relative paths might sound confusing in the CLI universe, but
 we intuitively understand this difference in our day-to-day lives. We usually call
 this difference _context_.
 
@@ -231,11 +241,12 @@ away. How might they react if you said:
 
 "Oh yeah, let's go to 41.890221 and -87.633904!"
 
-Latitude and longitude give _absolute_ directions based on the Equator and Prime Meridian. They're not
-commonly used by humans to make decisions on where to get lunch (even if
-they point, in fact, to one of our favorite pizzerias in Chicago).
+Latitude and longitude give _absolute_ directions based on the Equator and Prime
+Meridian. They're not commonly used by humans to make decisions on where to get
+lunch (even if they point, in fact, to one of our favorite pizzerias in
+Chicago).
 
-So far we've been finding out where we are in the file system "tree," how about
+So far, we've been finding out where we are in the file system "tree," how about
 we find out what's _in_ these directories (besides other directories)? We'll
 cover that in our next lesson.
 
@@ -243,34 +254,42 @@ cover that in our next lesson.
 
 As you type in commands in the shell, you can use "tab completion." Tab
 completion allows the shell to be smart and to try and guess what command you
-want to run when you hit the tab.  If there's only one logical way to complete
+want to run when you hit the tab. If there's only one logical way to complete
 your command, `bash` will fill in the rest for you, or will show you the
 possibilities and you can add more letters until you can tab-complete your
 command.
 
-For example let's say we have the following directory structure with two sub-
+For example, let's say we have the following directory structure with two sub-
 directories:
 
 ```bash
-flatiron_school/
-flatiron_building/
+college_dorm/
+college_campus/
 ```
 
-If I type `$ cd f` and then hit tab, it will fill in everything up until the
-conflict so I'll see `$ cd flatiron_`.  If I then add the `s` and hit tab it
-will fill in `$ cd flatiron_school` and I can hit enter.
+If I type `$ cd c` and then hit tab, it will fill in everything up until the
+conflict so I'll see `$ cd college_`. If I then add the `d` and hit tab it
+will fill in `$ cd college_dorm` and I can hit enter.
 
 ## Conclusion
 
 As we keep exploring and working with the command line, we will start to unlock
 and understand its full potential! Adopting the terminal
-can allow us to become more productive users.
+can allow us to become more productive users.
 
 ## Resources
 
-- [Lifehacker on the Command Line](http://lifehacker.com/5633909/who-needs-a-mouse-learn-to-use-the-command-line-for-almost-anything)
-- [Environment Variables](http://cbednarski.com/articles/understanding-environment-variables-and-the-unix-path/)
-- [Built-in Shell Commands](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html) *Very useful*
-- [15 Useful Bash Commands](http://www.thegeekstuff.com/2010/08/bash-shell-builtin-commands/)
-- [The One True Path](http://blog.seldomatt.com/blog/2012/10/08/bash-and-the-one-true-path/)
-- [More on paths - Wikipedia](http://en.wikipedia.org/wiki/Path_\(computing\))
+- [Lifehacker on the Command Line][lifehacker]
+- [Environment Variables][enviro]
+- [Built-in Shell Commands][shell] _Very useful_
+- [15 Useful Bash Commands][bash]
+- [The One True Path][path]
+- [More on paths - Wikipedia][wiki]
+
+[gits]: https://en.wikipedia.org/wiki/Ghost_in_the_Shell
+[lifehacker]: http://lifehacker.com/5633909/who-needs-a-mouse-learn-to-use-the-command-line-for-almost-anything
+[enviro]: http://cbednarski.com/articles/understanding-environment-variables-and-the-unix-path/
+[shell]: https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
+[bash]: http://www.thegeekstuff.com/2010/08/bash-shell-builtin-commands
+[path]: http://blog.seldomatt.com/blog/2012/10/08/bash-and-the-one-true-path/
+[wiki]: https://en.wikipedia.org/wiki/Path_(computing)
